@@ -1,17 +1,18 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useContext, useMemo } from "react";
 import { useFetchData } from "../../hooks/useFetchData";
 import { DashboardPostsInterface } from "./types";
 import { FlexColumn, FlexRow } from "../shared/Flex";
 import { PostCard } from "./PostCard";
+import { SearchContext } from "../../contexts/SearchContext";
 
 export const PostsList = () => {
-  //useMemo
-  const options = useMemo(() => ({ method: "GET" }), []);
 
-  const { data, isLoading } = useFetchData<DashboardPostsInterface[]>(
-    "https://jsonplaceholder.typicode.com/posts",
-    options
-  );
+  const {posts, postSearchResults} = useContext(SearchContext)!;
+
+  
+  // //useMemo
+  // const options = useMemo(() => ({ method: "GET" }), []);
+
 
   // console.log("Posts", data, isLoading);
 
@@ -30,7 +31,7 @@ export const PostsList = () => {
     >
       <h2>Posts</h2>
 
-      {data?.map((post) => (
+      {posts?.map((post) => (
         <PostCard post={post} />
       ))}
     </FlexColumn>

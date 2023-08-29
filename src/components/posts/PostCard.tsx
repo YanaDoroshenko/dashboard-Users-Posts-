@@ -43,7 +43,7 @@ export const PostCard: FC<PropsInterface> = ({ post }) => {
       <h3>{title}</h3>
       <p>{body}</p>
 
-      <button onClick={() => onShowCommentsToogle()}>
+      <button onClick={() => onShowCommentsToogle()} className="show-hide-btn">
         {isShowComments ? "Hide" : "Show"} comments
       </button>
 

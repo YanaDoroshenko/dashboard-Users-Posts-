@@ -71,5 +71,18 @@ export const FlexColumn = styled(Flex)`
   } */
   .post-card{
     border-radius: 10px;
+    padding: 20px;
+    line-height: 30px;
+  }
+  .show-hide-btn{
+    width: 180px;
+    height: 40px;
+    margin-top: 20px;
+    border: none;
+    background-color: #59a7fb;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 5px;
   }
 `;

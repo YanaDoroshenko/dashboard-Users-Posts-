@@ -5,15 +5,16 @@ import { Auth } from "./components/static/Auth";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 import { DashboardContextProvider } from "./contexts/DashboardContext";
+import { SearchContextProvider } from "./contexts/SearchContext";
 
 function App() {
   return (
     <FlexColumn width="100%">
-
       <DashboardContextProvider>
-        <RouterProvider router={router} />
+        <SearchContextProvider>
+          <RouterProvider router={router} />
+        </SearchContextProvider>
       </DashboardContextProvider>
-      
     </FlexColumn>
   );
 }

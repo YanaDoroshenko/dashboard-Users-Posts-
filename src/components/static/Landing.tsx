@@ -3,6 +3,7 @@ import { FlexColumn, FlexRow } from "../shared/Flex";
 import { Link } from "react-router-dom";
 import "../../landing.css";
 import { StyledLink } from "../shared/Link";
+import {ScrollTopContextProvider, ScrollPoint, Link as ScrollLink} from "react-use-scroll-to";
 
 export const Landing = () => {
   return (
@@ -23,6 +24,7 @@ export const Landing = () => {
       {/* </FlexRow> */}
 
       <FlexColumn width="100%">
+
         <div className="start-div">
           <FlexRow
             as="header"
@@ -77,18 +79,10 @@ export const Landing = () => {
               natural beauty.{" "}
             </p>
             <div></div>
-            <img
-              src="/dashboard/public/images/offer-1.jpg"
-              alt="img"
-              className="offer-1"
-            />
+            <img src="./images/offer-1.jpg" alt="img" className="offer-1" />
           </div>
           <div className="section-2">
-            <img
-              src="/dashboard/public/images/offer-2.jpg"
-              alt=""
-              className="offer-2"
-            />
+            <img src="./images/offer-2.jpg" alt="" className="offer-2" />
             <p>
               Mountain lakes, waterfalls,green valleys and clean beaches - all
               this awaits you. Feel the harmony with nature.
@@ -104,18 +98,10 @@ export const Landing = () => {
               flavors.{" "}
             </p>
             <div></div>
-            <img
-              src="/dashboard/public/images/offer-3.jpg"
-              alt="img"
-              className="offer-1"
-            />
+            <img src="./images/offer-3.jpg" alt="img" className="offer-1" />
           </div>
           <div className="section-4">
-            <img
-              src="/dashboard/public/images/offer-4.jpg"
-              alt=""
-              className="offer-2"
-            />
+            <img src="./images/offer-4.jpg" alt="" className="offer-2" />
             <p>
               Historical assets Ancient cities, castles and fortresses will tell
               you the history of Montenegro. You will immerse yourself in the
@@ -128,11 +114,7 @@ export const Landing = () => {
         <div className="review">
           <div className="h-div">
             <h4>Reviews</h4>
-            <img
-              src="/dashboard/public/images/right-arrow.png"
-              alt=""
-              className="arrow"
-            />
+            <img src="./images/right-arrow.png" alt="" className="arrow" />
           </div>
 
           <div className="people">
@@ -143,11 +125,11 @@ export const Landing = () => {
                   <div className="name">
                     <h5>Pedro Fabia</h5>
                     <div className="stars">
-                      <img src="/dashboard/public/images/Star.png" alt="" />
-                      <img src="/dashboard/public/images/Star.png" alt="" />
-                      <img src="/dashboard/public/images/Star.png" alt="" />
-                      <img src="/dashboard/public/images/Star.png" alt="" />
-                      <img src="/dashboard/public/images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
                     </div>
                   </div>
                   <span>May 29th, 2023</span>
@@ -168,11 +150,11 @@ export const Landing = () => {
                   <div className="name">
                     <h5>Ivan Vaseva</h5>
                     <div className="stars">
-                      <img src="/dashboard/public/images/Star.png" alt="" />
-                      <img src="/dashboard/public/images/Star.png" alt="" />
-                      <img src="/dashboard/public/images/Star.png" alt="" />
-                      <img src="/dashboard/public/images/Star.png" alt="" />
-                      <img src="/dashboard/public/images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
+                      <img src="./images/Star.png" alt="" />
                     </div>
                   </div>
                   <span>June 16th, 2023</span>
@@ -189,31 +171,67 @@ export const Landing = () => {
           </div>
         </div>
 
-            <div className="form-div">
-              <h3>Don't waste time - choose the best for your trip to Montenegro with us. Plan your adventure today!</h3>
-              <div className="form">
-              <input type="text" placeholder="SELECT TOUR"/>
-              <input type="text" placeholder="SELECT DATE"/>
-              <input type="number" placeholder="NUMBER OF GUESTS"/>
-              <button>BOOK TOUR</button>
-              </div>
+        <div className="form-div">
+          <h3>
+            Don't waste time - choose the best for your trip to Montenegro with
+            us. Plan your adventure today!
+          </h3>
+          <div className="form">
+            <div className="tour-input">
+              <img src="./images/Vector1.png" alt="" />
+              <input type="text" placeholder="SELECT TOUR" />
+              <img
+                src="./images/Arrow-down.png"
+                alt=""
+                className="arrow-down"
+              />
             </div>
 
-            <div className="footer">
-              <a href="" className="logo">SeeUp</a>
-              <div className="contacts">
-                <h5>Contacts</h5>
-                <a href="">montenegrotour@gmail.com</a>
-                <a href="">+7 897 897 897 99</a>
-              </div>
-              <div className="socials">
-                <img src="/dashboard/public/images/instagram.png" alt="" />
-                <img src="/dashboard/public/images/fb.png" alt="" />
-                <img src="/dashboard/public/images/linkIn.png" alt="" />
-              </div>
+            <div className="tour-input">
+              <img src="./images/Vector2.png" alt="" />
+              <input type="text" placeholder="SELECT DATE" />
+              <img
+                src="./images/Arrow-down.png"
+                alt=""
+                className="arrow-down"
+              />
             </div>
+            <div className="tour-input">
+              <img src="./images/Vector3.png" alt="" />
+              <input type="number" placeholder="NUMBER OF GUESTS" />
+              <img
+                src="./images/Arrow-down.png"
+                alt=""
+                className="arrow-down"
+              />
+            </div>
+            <button>BOOK TOUR</button>
+          </div>
+        </div>
 
+        <div className="footer">
+          <a href="" className="logo">
+            SeeUp
+          </a>
+          <div className="contacts">
+            <h5>Contacts</h5>
+            <a href="">montenegrotour@gmail.com</a>
+            <a href="">+7 897 897 897 99</a>
+          </div>
+          <div className="socials">
+            <a href="#">
+              <img src="./images/instagram.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="./images/fb.png" alt="" />
+            </a>
+            <a href="#">
+              <img src="./images/linkIn.png" alt="" />
+            </a>
+          </div>
+        </div>
       </FlexColumn>
+
     </FlexColumn>
   );
 };
