@@ -37,7 +37,9 @@ export const FlexColumn = styled(Flex)`
   .auth-link{
     display:flex;
     margin: auto;
-    font-size: 24px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #5a5a5a;
   }
   .wrapper {
     /* width: 20px;

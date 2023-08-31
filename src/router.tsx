@@ -7,6 +7,7 @@ import { Settings } from "./components/static/Settings";
 import { UsersList } from "./components/users/UsersList";
 import React from "react";
 import { PostsList } from "./components/posts/PostsList";
+import { CommentsList } from "./components/comments/CommentsList";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
     {
       path: "posts", 
       element: <PostsList/>
+    },
+    {
+      path: "comments",
+      element: <CommentsList/>
     },
     {
       path: "/dashboard/settings",
