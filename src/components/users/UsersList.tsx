@@ -9,7 +9,7 @@ import { SearchContext } from "../../contexts/SearchContext";
 
 export const UsersList = () => {
 
-  const {users, userSearchResults} = useContext(SearchContext)!;
+  const {users, userSearchResults, value} = useContext(SearchContext)!;
 
   console.log(userSearchResults);
 
@@ -19,7 +19,7 @@ export const UsersList = () => {
     <FlexColumn width="100%" alignItems="center">
         <h1>Users</h1>
         <Search/>
-      {users?.map((user) => (
+      {(value ? userSearchResults : users).map((user) => (
         <UserItem user={user} />
       ))}
     </FlexColumn>

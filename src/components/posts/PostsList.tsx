@@ -4,10 +4,11 @@ import { DashboardPostsInterface } from "./types";
 import { FlexColumn, FlexRow } from "../shared/Flex";
 import { PostCard } from "./PostCard";
 import { SearchContext } from "../../contexts/SearchContext";
+import { Search } from "../shared/Search";
 
 export const PostsList = () => {
 
-  const {posts, postSearchResults} = useContext(SearchContext)!;
+  const {posts, postSearchResults, value} = useContext(SearchContext)!;
 
   
   // //useMemo
@@ -31,7 +32,9 @@ export const PostsList = () => {
     >
       <h2>Posts</h2>
 
-      {posts?.map((post) => (
+      <Search/>
+
+      {(value ? postSearchResults : posts).map((post) => (
         <PostCard post={post} />
       ))}
     </FlexColumn>
